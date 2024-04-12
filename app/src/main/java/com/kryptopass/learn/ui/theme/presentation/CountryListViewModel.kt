@@ -17,35 +17,43 @@ import javax.inject.Inject
 class CountryListViewModel @Inject constructor(
     private val getCountriesUseCase: GetCountriesUseCase,
     private val getCountryUseCase: GetCountryUseCase
-): ViewModel() {
+) : ViewModel() {
 
     private val _state = MutableStateFlow(CountriesState())
     val state = _state.asStateFlow()
 
     init {
         viewModelScope.launch {
-            _state.update { it.copy(
-                isLoading = true
-            ) }
-            _state.update { it.copy(
-                countries = getCountriesUseCase.execute(),
-                isLoading = false
-            ) }
+            _state.update {
+                it.copy(
+                    isLoading = true
+                )
+            }
+            _state.update {
+                it.copy(
+                    countries = getCountriesUseCase.execute(),
+                    isLoading = false
+                )
+            }
         }
     }
 
     fun selectCountry(code: String) {
         viewModelScope.launch {
-            _state.update { it.copy(
-                selectedCountry = getCountryUseCase.execute(code)
-            ) }
+            _state.update {
+                it.copy(
+                    selectedCountry = getCountryUseCase.execute(code)
+                )
+            }
         }
     }
 
     fun dismissCountryDialog() {
-        _state.update { it.copy(
-            selectedCountry = null
-        ) }
+        _state.update {
+            it.copy(
+                selectedCountry = null
+            )
+        }
     }
 
     data class CountriesState(

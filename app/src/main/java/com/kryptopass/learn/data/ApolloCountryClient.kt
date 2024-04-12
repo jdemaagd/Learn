@@ -9,7 +9,7 @@ import com.kryptopass.learn.domain.SimpleCountry
 
 class ApolloCountryClient(
     private val apolloClient: ApolloClient
-): CountryClient {
+) : CountryClient {
 
     override suspend fun getCountries(): List<SimpleCountry> {
         return apolloClient
