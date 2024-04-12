@@ -7,8 +7,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.kryptopass.learn.ui.theme.LearnTheme
-import com.kryptopass.learn.ui.theme.presentation.CountryListScreen
 import com.kryptopass.learn.ui.theme.presentation.CountryListViewModel
+import com.kryptopass.learn.ui.theme.presentation.CountryListScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

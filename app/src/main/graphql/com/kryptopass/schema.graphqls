@@ -27,7 +27,7 @@ type Continent {
 
     name: String!
 
-    countryList: [Country!]!
+    countries: [Country!]!
 }
 
 type Language {
@@ -83,7 +83,7 @@ type Query {
 
     _service: _Service!
 
-    countryList(filter: CountryFilterInput): [Country!]!
+    countries(filter: CountryFilterInput): [Country!]!
 
     country(code: ID!): Country
 

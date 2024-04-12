@@ -1,6 +1,6 @@
 package com.kryptopass.learn.data
 
-import com.kryptopass.CountryListQuery
+import com.kryptopass.CountriesQuery
 import com.kryptopass.CountryQuery
 import com.kryptopass.learn.domain.DetailedCountry
 import com.kryptopass.learn.domain.SimpleCountry
@@ -17,7 +17,7 @@ fun CountryQuery.Country.toDetailedCountry(): DetailedCountry {
     )
 }
 
-fun CountryListQuery.CountryList.toSimpleCountry(): SimpleCountry {
+fun CountriesQuery.Country.toSimpleCountry(): SimpleCountry {
     return SimpleCountry(
         code = code,
         name = name,

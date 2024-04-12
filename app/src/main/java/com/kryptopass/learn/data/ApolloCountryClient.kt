@@ -1,7 +1,7 @@
 package com.kryptopass.learn.data
 
 import com.apollographql.apollo3.ApolloClient
-import com.kryptopass.CountryListQuery
+import com.kryptopass.CountriesQuery
 import com.kryptopass.CountryQuery
 import com.kryptopass.learn.domain.CountryClient
 import com.kryptopass.learn.domain.DetailedCountry
@@ -11,12 +11,12 @@ class ApolloCountryClient(
     private val apolloClient: ApolloClient
 ): CountryClient {
 
-    override suspend fun getCountryList(): List<SimpleCountry> {
+    override suspend fun getCountries(): List<SimpleCountry> {
         return apolloClient
-            .query(CountryListQuery())
+            .query(CountriesQuery())
             .execute()
             .data
-            ?.countryList
+            ?.countries
             ?.map { it.toSimpleCountry() }
             ?: emptyList()
     }

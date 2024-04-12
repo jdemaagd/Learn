@@ -3,7 +3,7 @@ package com.kryptopass.learn.ui.theme.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kryptopass.learn.domain.DetailedCountry
-import com.kryptopass.learn.domain.GetCountryListUseCase
+import com.kryptopass.learn.domain.GetCountriesUseCase
 import com.kryptopass.learn.domain.GetCountryUseCase
 import com.kryptopass.learn.domain.SimpleCountry
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,11 +15,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CountryListViewModel @Inject constructor(
-    private val getCountryListUseCase: GetCountryListUseCase,
+    private val getCountriesUseCase: GetCountriesUseCase,
     private val getCountryUseCase: GetCountryUseCase
 ): ViewModel() {
 
-    private val _state = MutableStateFlow(CountryListState())
+    private val _state = MutableStateFlow(CountriesState())
     val state = _state.asStateFlow()
 
     init {
@@ -28,7 +28,7 @@ class CountryListViewModel @Inject constructor(
                 isLoading = true
             ) }
             _state.update { it.copy(
-                countryList = getCountryListUseCase.execute(),
+                countries = getCountriesUseCase.execute(),
                 isLoading = false
             ) }
         }
@@ -48,8 +48,8 @@ class CountryListViewModel @Inject constructor(
         ) }
     }
 
-    data class CountryListState(
-        val countryList: List<SimpleCountry> = emptyList(),
+    data class CountriesState(
+        val countries: List<SimpleCountry> = emptyList(),
         val isLoading: Boolean = false,
         val selectedCountry: DetailedCountry? = null
     )

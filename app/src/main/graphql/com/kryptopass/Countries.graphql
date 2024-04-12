@@ -1,5 +1,5 @@
-query CountryList {
-    countryList {
+query Countries {
+    countries {
         name
         capital
         code

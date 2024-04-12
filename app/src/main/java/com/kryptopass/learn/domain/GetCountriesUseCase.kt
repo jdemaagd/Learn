@@ -1,12 +1,12 @@
 package com.kryptopass.learn.domain
 
-class GetCountryListUseCase(
+class GetCountriesUseCase(
     private val countryClient: CountryClient
 ) {
 
     suspend fun execute(): List<SimpleCountry> {
         return countryClient
-            .getCountryList()
+            .getCountries()
             .sortedBy { it.name }
     }
 }

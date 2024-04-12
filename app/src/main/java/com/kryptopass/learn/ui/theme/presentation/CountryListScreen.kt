@@ -30,7 +30,7 @@ import com.kryptopass.learn.domain.SimpleCountry
 
 @Composable
 fun CountryListScreen(
-    state: CountryListViewModel.CountryListState,
+    state: CountryListViewModel.CountriesState,
     onSelectCountry: (code: String) -> Unit,
     onDismissCountryDialog: () -> Unit
 ) {
@@ -43,7 +43,7 @@ fun CountryListScreen(
             LazyColumn(
                 modifier = Modifier.fillMaxSize()
             ) {
-                items(state.countryList) { country ->
+                items(state.countries) { country ->
                     CountryItem(
                         country = country,
                         modifier = Modifier

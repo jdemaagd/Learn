@@ -3,7 +3,7 @@ package com.kryptopass.learn.di
 import com.apollographql.apollo3.ApolloClient
 import com.kryptopass.learn.data.ApolloCountryClient
 import com.kryptopass.learn.domain.CountryClient
-import com.kryptopass.learn.domain.GetCountryListUseCase
+import com.kryptopass.learn.domain.GetCountriesUseCase
 import com.kryptopass.learn.domain.GetCountryUseCase
 import dagger.Module
 import dagger.Provides
@@ -31,8 +31,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideGetCountryListUseCase(countryClient: CountryClient): GetCountryListUseCase {
-        return GetCountryListUseCase(countryClient)
+    fun provideGetCountriesUseCase(countryClient: CountryClient): GetCountriesUseCase {
+        return GetCountriesUseCase(countryClient)
     }
 
     @Provides
