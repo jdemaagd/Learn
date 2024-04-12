@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -5,6 +7,17 @@ plugins {
     alias(libs.plugins.devtoolsKsp)
 
     id("com.apollographql.apollo3").version("3.7.3")
+}
+
+lateinit var properties: Properties
+var apolloBaseUrl: String = ""
+
+if (File("local.properties").exists()) {
+    properties =
+        Properties().apply { load(project.rootProject.file("local.properties").inputStream()) }
+    apolloBaseUrl = properties.getProperty("APOLLO_BASE_URL")
+} else {
+    System.getenv("APOLLO_BASE_URL")
 }
 
 apollo {
@@ -30,27 +43,56 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("keystore/firebug_keystore.jks")
+            storePassword = System.getenv("SIGNING_STORE_PASSWORD")
+            keyAlias = System.getenv("SIGNING_KEY_ALIAS")
+            keyPassword = System.getenv("SIGNING_KEY_PASSWORD")
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true
+        compose = true
+    }
     buildTypes {
-        release {
+        getByName("debug") {
             isMinifyEnabled = false
+            isDebuggable = true
+            buildConfigField("String", "APOLLO_BASE_URL", "\"$apolloBaseUrl\"")
+        }
+        release {
+            isMinifyEnabled = true
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "APOLLO_BASE_URL", "\"$apolloBaseUrl\"")
+
+            // https://mdapp.medium.com/a-comprehensive-guide-for-upgrading-to-the-gradle-kotlin-dsl-for-android-apps-f6b608807e4e
+            applicationVariants.all {
+                val variant = this
+                variant.outputs.map { it as com.android.build.gradle.internal.api.BaseVariantOutputImpl }
+                    .forEach { output ->
+                        val outputFileName = "${rootProject.name}_${versionName}.apk"
+                        output.outputFileName = outputFileName
+                    }
+            }
+
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-    buildFeatures {
-        compose = true
-    }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.11"
+    }
+    kotlinOptions {
+        jvmTarget = "17"
     }
     packaging {
         resources {

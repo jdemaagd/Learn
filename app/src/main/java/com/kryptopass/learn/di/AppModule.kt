@@ -1,6 +1,7 @@
 package com.kryptopass.learn.di
 
 import com.apollographql.apollo3.ApolloClient
+import com.kryptopass.learn.BuildConfig
 import com.kryptopass.learn.data.ApolloCountryClient
 import com.kryptopass.learn.domain.CountryClient
 import com.kryptopass.learn.domain.GetCountriesUseCase
@@ -19,7 +20,7 @@ object AppModule {
     @Singleton
     fun provideApolloClient(): ApolloClient {
         return ApolloClient.Builder()
-            .serverUrl("https://countries.trevorblades.com/graphql")
+            .serverUrl(BuildConfig.APOLLO_BASE_URL)
             .build()
     }
 
