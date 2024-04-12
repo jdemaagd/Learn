@@ -1,6 +1,16 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.daggerHiltAndroid)
+    alias(libs.plugins.devtoolsKsp)
+
+    id("com.apollographql.apollo3").version("3.7.3")
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.kryptopass")
+    }
 }
 
 android {
@@ -59,6 +69,14 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+
+    implementation(libs.hilt.android)
+
+    implementation(libs.apollo.runtime)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
+
+    ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)
 

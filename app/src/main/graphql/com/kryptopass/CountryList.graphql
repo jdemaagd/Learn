@@ -1,0 +1,8 @@
+query CountryList {
+    countryList {
+        name
+        capital
+        code
+        emoji
+    }
+}
