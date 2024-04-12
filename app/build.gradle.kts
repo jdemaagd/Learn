@@ -113,6 +113,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
 
     implementation(libs.hilt.android)
+    implementation(libs.okhttp)
 
     implementation(libs.apollo.runtime)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
