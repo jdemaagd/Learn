@@ -1,4 +1,4 @@
-package com.kryptopass.app
+package com.kryptopass.apollo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

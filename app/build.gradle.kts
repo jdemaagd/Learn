@@ -1,14 +1,22 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+
+    id("com.apollographql.apollo3").version("3.8.3")
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.kryptopass")
+    }
 }
 
 android {
-    namespace = "com.kryptopass.app"
+    namespace = "com.kryptopass.apollo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.kryptopass.app"
+        applicationId = "com.kryptopass.apollo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -59,6 +67,8 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+
+    implementation(libs.apollo.runtime)
 
     testImplementation(libs.junit)
 

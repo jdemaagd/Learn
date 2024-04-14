@@ -1,0 +1,106 @@
+# Welcome to GraphiQL
+#
+# GraphiQL is an in-browser tool for writing, validating, and
+# testing GraphQL queries.
+#
+# Type queries into this side of the screen, and you will see intelligent
+# typeaheads aware of the current GraphQL type schema and live syntax and
+# validation errors highlighted within the text.
+#
+# GraphQL queries typically start with a "{" character. Lines that start
+# with a # are ignored.
+#
+# An example GraphQL query might look like:
+#
+#     {
+#       field(arg: "value") {
+#         subField
+#       }
+#     }
+#
+# Keyboard shortcuts:
+#
+#  Prettify Query:  Shift-Ctrl-P (or press the prettify button above)
+#
+#     Merge Query:  Shift-Ctrl-M (or press the merge button above)
+#
+#       Run Query:  Ctrl-Enter (or press the play button above)
+#
+#   Auto Complete:  Ctrl-Space (or just start typing)
+#
+
+# query {
+#   user(id: "661ad9c61298d60c2c1191e9") {
+#     age
+#     name
+#     profession
+#   }
+# }
+
+query {
+  user(id: "661ad9c61298d60c2c1191e9") {
+    name
+    profession
+    posts {
+      id
+      comment
+    }
+    hobbies {
+      title
+      description
+    }
+  }
+}
+
+# query {
+#   posts {
+#     id
+#     comment
+#     user {
+#       name
+#       profession
+#       age
+#       id
+#     }
+#   }
+# }
+
+# mutation {
+#   CreateHobby(
+#     title: "Hiking"
+#     description: "Wear hiking boots and explore the world"
+#     userId: "661ad9ff1298d60c2c1191ed"
+#   ) {
+#     title
+#     description
+#   }
+# }
+
+# mutation {
+#  	CreatePost(
+#     comment: "How to Change the World"
+#     userId: "661ad7fe5de901f7e3e7dcda"
+#   ) {
+#     id
+#     comment
+#   }
+# }
+
+# mutation {
+#   RemovePost(id: "661ade22dbcb08420e314345") {
+#     id
+#     comment
+#   }
+# }
+
+# mutation {
+#   UpdateHobby(
+#     id: "661add0fdbcb08420e314340"
+#     description: "A hobby for fency people!"
+#     title: "Fencing"
+#   ) {
+#     title
+#     description
+#     id
+#   }
+# }

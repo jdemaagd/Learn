@@ -1,4 +1,4 @@
-package com.kryptopass.app.ui.theme
+package com.kryptopass.apollo.ui.theme
 
 import android.app.Activity
 import android.os.Build

@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.daggerHiltAndroid)
     alias(libs.plugins.devtoolsKsp)
 
-    id("com.apollographql.apollo3").version("3.7.3")
+    id("com.apollographql.apollo3").version("3.8.3")
 }
 
 lateinit var properties: Properties

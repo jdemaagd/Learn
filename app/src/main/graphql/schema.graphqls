@@ -1,0 +1,57 @@
+schema {
+  query: RootQueryType
+  mutation: Mutation
+}
+
+# Exposes a URL that specifies the behavior of this scalar.
+directive @specifiedBy(
+  # The URL that specifies the behavior of this scalar.
+  url: String!
+) on SCALAR
+
+# Hobby description
+type Hobby {
+  id: String
+  title: String
+  description: String
+  user: User
+}
+
+type Mutation {
+  CreateUser(name: String!, age: Int!, profession: String): User
+  UpdateUser(id: String!, name: String!, age: Int, profession: String): User
+  RemoveUser(id: String!): User
+  CreatePost(comment: String!, userId: String!): Post
+  UpdatePost(id: String!, comment: String!): Post
+  RemovePost(id: String!): Post
+  CreateHobby(title: String!, description: String!, userId: String!): Hobby
+  UpdateHobby(id: String!, title: String!, description: String!): Hobby
+  RemoveHobby(id: String!): Hobby
+}
+
+# Post description
+type Post {
+  id: String
+  comment: String
+  user: User
+}
+
+# Description
+type RootQueryType {
+  user(id: String): User
+  users: [User]
+  hobby(id: String): Hobby
+  hobbies: [Hobby]
+  post(id: String): Post
+  posts: [Post]
+}
+
+# Documentation for user...
+type User {
+  id: String
+  name: String
+  age: Int
+  profession: String
+  posts: [Post]
+  hobbies: [Hobby]
+}

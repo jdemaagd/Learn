@@ -1,4 +1,4 @@
-package com.kryptopass.app
+package com.kryptopass.apollo
 
 import org.junit.Test
 
