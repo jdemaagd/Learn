@@ -12,58 +12,30 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
-    background = Tan20,
-    onBackground = Tan89,
-    surface = Tan10,
-    onSurface = Tan89,
-    surfaceVariant = Orange60,
-    onSurfaceVariant = Tan89,
-    primary = Orange95,
-    onPrimary = White,
-    primaryContainer = Orange95,
-    onPrimaryContainer = Orange40,
-    secondaryContainer = Tan30,
-    onSecondaryContainer = Tan89,
-    outline = Tan70
+    primary = Purple200,
+    secondary = Purple700,
+    tertiary = Teal200
 )
 
 private val LightColorScheme = lightColorScheme(
-    background = Tan80,
-    onBackground = Tan29,
-    surface = Tan99,
-    onSurface = Tan50,
-    surfaceVariant = Tan95,
-    onSurfaceVariant = Tan50,
-    primary = Orange70,
-    onPrimary = White,
-    primaryContainer = Orange99,
-    onPrimaryContainer = Tan50,
-    secondaryContainer = Tan90,
-    onSecondaryContainer = Tan50,
-    outline = Tan65
+    primary = Purple500,
+    secondary = Purple700,
+    tertiary = Teal200
 )
 
 @Composable
 fun LearnTheme(
-    isDarkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        isDarkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
-
-    val view = LocalView.current
-    if (!view.isInEditMode) {
-        SideEffect {
-            val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.background.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !isDarkTheme
-        }
+    val colors = if (darkTheme) {
+        DarkColorScheme
+    } else {
+        LightColorScheme
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = colors,
         typography = Typography,
         shapes = Shapes,
         content = content

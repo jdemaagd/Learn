@@ -11,6 +11,9 @@
     - also paste app theme url into dialog
     - make sure it matches path to projects ../ui/theme/Theme.kt
 - Android Studio > Build > Make Project
+- Iterations > make design changes in Figma component > same steps to share with Developer
+- Android View > ui-packages > component > right click > Update UI Package
+- NOTE: work in Android View, these are generated files and not checked into VCS
 
 ## Gradle
 
@@ -25,3 +28,4 @@
 - [Screen Resolution Stats](https://gs.statcounter.com/screen-resolution-stats)
 - [Create UI Package in Figma](https://developer.android.com/develop/ui/compose/tooling/relay/create-ui-package-in-figma)
 - [Relay for Figma](https://www.figma.com/community/plugin/1041056822461507786/relay-for-figma)
+- [Advanced Tutorial](https://developer.android.com/develop/ui/compose/tooling/relay/advanced-tutorial)

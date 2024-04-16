@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.kryptopass.figma.hellocard.HelloCard
 import com.kryptopass.figma.ui.theme.LearnTheme
 
 class MainActivity : ComponentActivity() {
@@ -28,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting(stringResource(id = R.string.app_name))
+                    HelloCard(title = stringResource(id = R.string.app_name))
                 }
             }
         }
@@ -53,6 +54,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     LearnTheme {
-        Greeting(stringResource(id = R.string.app_name))
+        HelloCard(title = stringResource(id = R.string.app_name))
     }
 }
