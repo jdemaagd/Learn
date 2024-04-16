@@ -1,0 +1,202 @@
+{
+  "name": "tracker_settings_bar",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "XE59qZ8qOmTWN3Rqvaj5uY",
+    "node": "142:19145",
+    "version": "5569473452",
+    "component-id": "fbc72627f0954ba6cdde2ea5d7d1bbe7090e0bed"
+  },
+  "default": "Tracker Settings Bar",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "adin_component",
+        "id": "Close Button",
+        "key": "icon_button"
+      },
+      {
+        "type": "group",
+        "id": "contentContainer"
+      },
+      {
+        "type": "adin_component",
+        "id": "Save Button",
+        "key": "button"
+      },
+      {
+        "type": "group",
+        "id": "headline-primary"
+      },
+      {
+        "type": "text",
+        "id": "headline"
+      }
+    ],
+    "modes": {
+      "Tracker Settings Bar": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": 8.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Close Button",
+              "contentContainer",
+              "Save Button"
+            ],
+            "item-spacing": 4.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 25.71428571428571,
+              "saturation": 0.027888446215139345,
+              "value": 0.984313725490196
+            },
+            "clip-content": false
+          },
+          {
+            "id": "Close Button",
+            "on Tap": "$on Close Button Tapped",
+            "Icon": "close",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 48.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 48.0
+              }
+            }
+          },
+          {
+            "id": "contentContainer",
+            "padding": {
+              "top": 12.0,
+              "bottom": 12.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "headline-primary"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Save Button",
+            "design": "Configuration=Text,State=enabled",
+            "on Tap": "$on Save Button Tapped",
+            "Icon": "add",
+            "Label": "$save label",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            }
+          },
+          {
+            "id": "headline-primary",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "headline"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "headline",
+            "color": {
+              "alpha": 1.0,
+              "hue": 24.545454545454554,
+              "saturation": 0.275,
+              "value": 0.3137254901960784
+            },
+            "text-content": "$title",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "DM Sans"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "on Close Button Tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "save label": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "on Save Button Tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "title": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Tracker Settings Bar",
+      "size": {
+        "width": 412.0,
+        "height": 64.0
+      },
+      "parameters": {
+        "save label": "Save",
+        "title": "Add new tracker"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

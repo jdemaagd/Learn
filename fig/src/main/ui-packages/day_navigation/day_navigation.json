@@ -1,0 +1,148 @@
+{
+  "name": "day_navigation",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "XE59qZ8qOmTWN3Rqvaj5uY",
+    "node": "119:17416",
+    "version": "5569473452",
+    "component-id": "56d062edd7307c143f4803c6a7dc987d8f2d77d2"
+  },
+  "default": "Day Navigation",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "adin_component",
+        "id": "Date Navigation Button Prev",
+        "key": "icon_button"
+      },
+      {
+        "type": "text",
+        "id": "Friday, 24"
+      },
+      {
+        "type": "adin_component",
+        "id": "Date Navigation Button Next",
+        "key": "icon_button"
+      }
+    ],
+    "modes": {
+      "Day Navigation": {
+        "rules": [
+          {
+            "id": "top_level",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Date Navigation Button Prev",
+              "Friday, 24",
+              "Date Navigation Button Next"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Date Navigation Button Prev",
+            "on Tap": "$on Prev Tapped",
+            "Icon": "navigate_before",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 48.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 48.0
+              }
+            }
+          },
+          {
+            "id": "Friday, 24",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 36.31578947368422,
+              "saturation": 0.7037037037037037,
+              "value": 0.21176470588235294
+            },
+            "text-content": "$date",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align-vertical": "center",
+            "text-size": 24.0,
+            "typeface": "DM Sans"
+          },
+          {
+            "id": "Date Navigation Button Next",
+            "on Tap": "$on Next Tapped",
+            "Icon": "navigate_next",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 48.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 48.0
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "on Prev Tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "date": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "on Next Tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Day Navigation",
+      "size": {
+        "width": 412.0,
+        "height": 48.0
+      },
+      "parameters": {
+        "date": "Friday, 24"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
