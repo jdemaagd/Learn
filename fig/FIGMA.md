@@ -33,3 +33,4 @@
 - [Create UI Package in Figma](https://developer.android.com/develop/ui/compose/tooling/relay/create-ui-package-in-figma)
 - [Relay for Figma](https://www.figma.com/community/plugin/1041056822461507786/relay-for-figma)
 - [Advanced Tutorial](https://developer.android.com/develop/ui/compose/tooling/relay/advanced-tutorial)
+- [Relay Workflow](https://developer.android.com/develop/ui/compose/tooling/relay/relay-workflow)

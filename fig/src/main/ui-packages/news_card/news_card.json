@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "Kqo2XFERexHatbmcqUlAOO",
     "node": "2:68",
-    "version": "5576071795",
+    "version": "5576210450",
     "component-id": "09b33d272af7e3753479fd030712f7713611fc28"
   },
   "default": "view=hero-item",
@@ -69,6 +69,7 @@
             "id": "top_level",
             "padding": 16.0,
             "border-radius": 24.0,
+            "tap-handler": "$on NewsCard tapped",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "proportional",
@@ -252,6 +253,7 @@
               "bottom": 12.0
             },
             "border-radius": 24.0,
+            "tap-handler": "$on NewsCard tapped",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "proportional",
@@ -437,6 +439,7 @@
             "id": "top_level",
             "padding": 12.0,
             "border-radius": 24.0,
+            "tap-handler": "$on NewsCard tapped",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "shrink"
@@ -627,6 +630,7 @@
           },
           {
             "id": "menu",
+            "tap-handler": "$on Menu tapped",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "fixed",
@@ -659,6 +663,11 @@
     }
   },
   "parameters": {
+    "on NewsCard tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
     "thumbnail": {
       "data-type": "image",
       "required": false,
@@ -676,6 +685,11 @@
     },
     "date": {
       "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "on Menu tapped": {
+      "data-type": "void-callback",
       "required": false,
       "description": ""
     }
