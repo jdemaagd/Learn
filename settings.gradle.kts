@@ -24,5 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Learn"
 include(":app")
-include(":ql")
 include(":fig")
+include(":ql")

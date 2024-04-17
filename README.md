@@ -1,5 +1,13 @@
 # Modern Android going Forward
 
+## Relay Support
+
+- Hedgehog down to Electric Eel
+- Not supported in Iguana
+- Gradle Version: 8.2.2
+- Kotlin Version: 1.9.22
+- Does not support latest versions
+
 ## Resources
 
 - [Codelab](https://codelabs.developers.google.com/relay-complete-app#0)
