@@ -15,6 +15,10 @@
 - Android View > ui-packages > component > right click > Update UI Package
 - NOTE: work in Android View, these are generated files and not checked into VCS
 
+## Variant
+
+- Used to group different variations of the same component together
+
 ## Gradle
 
 - `id("com.google.relay").version("0.3.11")`
