@@ -1,17 +1,17 @@
 [versions]
 activityCompose = "1.9.0"
-agp = "8.4.0"
+agp = "8.4.2"
 apollo = "3.8.3"
-composeBom = "2024.05.00"
+composeBom = "2024.06.00"
 coreKtx = "1.13.1"
-espressoCore = "3.5.1"
-hilt = "2.50"
+espressoCore = "3.6.1"
+hilt = "2.51.1"
 hiltNavCompose = "1.2.0"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-kotlin = "1.9.23"
-kspCompiler = "1.9.23-1.0.19"
-lifecycle = "2.7.0"
+junitVersion = "1.2.1"
+kotlin = "2.0.0"
+kspCompiler = "2.0.0-1.0.21"
+lifecycle = "2.8.3"
 okhttp = "4.12.0"
 
 [libraries]
@@ -37,8 +37,9 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
-androidLibrary = { id = "com.android.library", version.ref = "agp" }
-daggerHiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
-devtoolsKsp = { id = "com.google.devtools.ksp", version.ref = "kspCompiler" }
-jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "kspCompiler" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
